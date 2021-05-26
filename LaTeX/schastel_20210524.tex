@@ -1,0 +1,608 @@
+\documentclass[10pt]{article}
+
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+\pagestyle{empty}
+
+\usepackage{graphicx}
+% \usepackage{times}
+\usepackage{ebgaramond}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{geometry}
+\geometry{ansiapaper, margin=0.75in}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\usepackage{wasysym}
+\usepackage{marvosym}
+
+\renewcommand{\section}[4]{%
+  \medskip
+  
+  \begin{tikzpicture}
+    \node (#1) [rectangle, minimum width=1.0\linewidth, 
+    anchor=north west,
+    shading = radial, % shading angle=135,
+    outer color=#4!80,inner color=white
+    % axis left color=#3,
+    % middle color = white,
+    % right color = #4
+    ]
+    at (0pt, 0pt) {
+      \textbf{\Large #2}
+    };
+  \end{tikzpicture}
+}
+
+\renewcommand{\subsection}[1]{%
+
+  \medskip
+  
+  %\noskill{%
+    \textbf{\large #1}
+  %}
+}
+
+\definecolor{left} {HTML}{AFE1AF}
+\definecolor{right} {HTML}{50C878}
+
+\begin{document}
+
+\begin{tikzpicture}
+  \node (origin) [rectangle, minimum width=\linewidth,
+  anchor=north west]
+  at (0pt, 0pt) {
+    \begin{tabular}[t]{lr}
+      \begin{minipage}{0.6\linewidth}
+        \large
+        
+        \textbf{Serge CHASTEL}
+
+        \medskip
+        
+        17 years of experience developing, integrating, and deploying
+        cutting-edge engineering solutions in research institutions
+        and high-tech industries
+      \end{minipage}
+    &
+    %   \begin{minipage}{0.35\linewidth}
+    %     \begin{tabular}{cr}
+    %       \Letter{} & 2063 St Louis Dr. \\
+    %                 & Honolulu 96816, HI \\
+    %       \Mobilefone{} & (808) 277 5687 \\
+    %       \Email{} & schastel.at.work@gmail.com \\
+    %     \end{tabular}
+    % \end{minipage}
+      \begin{minipage}{0.35\linewidth}
+        \begin{tabular}{rc}
+          2063 St Louis Dr. & \Letter{} \\
+          Honolulu HI, 96816 & \\
+          (808) 277 5687 & \Mobilefone{} \\
+          schastel.at.work@gmail.com& \Email{} \\
+        \end{tabular}
+    \end{minipage}
+      
+    \end{tabular}
+  };
+\end{tikzpicture}
+
+\definecolor{leftskills} {HTML}{F08080}
+\definecolor{rightskills} {HTML}{FFA07A}
+\section{skills}{Skills}{leftskills}{rightskills}
+
+\begin{tikzpicture}
+  \node [rectangle, minimum width=\linewidth,
+  anchor=north west] {
+    \begin{minipage}{1.0\linewidth}
+      \large
+      Languages: Java, Python, JavaScript, bash, SQL, C, C++, \LaTeX{}
+
+      Technologies: Kubernetes, Docker, Ceph, MySQL, PostgreSQL,
+      hg/git, HTCondor
+
+      OS: Linux (Ubuntu, CentOS, RH)
+    \end{minipage}
+  };
+\end{tikzpicture}
+
+\section{exp}{Experience}{left}{right}
+
+\newlength{\expitem}
+\setlength{\expitem}{0.60\linewidth}
+
+\newlength{\expskill}
+\setlength{\expskill}{0.39\linewidth}
+
+\newlength{\itemskilljump}
+\setlength{\itemskilljump}{0mm}
+
+\begin{tikzpicture}
+  \node (origin) [rectangle, minimum width=1.0\linewidth,
+  anchor=south west,
+    shading = axis, shading angle=135,
+    left color=left!20!white,
+    right color = right!20!white] {
+    \begin{minipage}{0.95\linewidth}
+      \subsection{Full Stack Software Engineer} \hfill
+      Pan-STARRS Telescopes - Moving Objects Processing System
+
+      Since Mar 2013 (8 years)
+      \hfill    
+      Research Corp. of Univ. of Hawai`i / Inst. for Astronomy / NASA
+
+      Responsible for the redefinition, migration, improvement,
+      expansion, and maintenance of the whole software stack
+    \end{minipage}
+  };
+
+  \node (item1) [rectangle, minimum width=\expitem,
+  anchor=north west] at ([xshift=\itemskilljump, yshift=-\itemskilljump]origin.south west) {
+    \begin{minipage}{\expitem}
+      Parallelization and distribution of data processing functions, 
+      resulting in a speed-up of 50 while the load increased by 20 in
+      size (8TB/night).
+    \end{minipage}
+  };
+  
+  \node (skill1) [rectangle, minimum width=\expskill,
+  anchor=west] at ([xshift=\itemskilljump]item1.east) {
+    \begin{minipage}{\expskill}
+      Java, Gradle/Maven, Python, JS, bash, git,
+      JPA/Hibernate, Hikari
+    \end{minipage}
+  };
+
+  \node (skill2) [rectangle, minimum width=\expskill,
+  anchor=north west] at ([yshift=-\itemskilljump]skill1.south west) {
+    \begin{minipage}{\expskill}
+      Kubernetes, Docker, Ceph,      
+      MariaDB, PostgreSQL, H2, SQLite
+    \end{minipage}
+  };
+
+  \node (item2) [rectangle, minimum width=\expitem,
+  anchor=east] at ([xshift=-\itemskilljump]skill2.west) {
+    \begin{minipage}{\expitem}
+      Distributed computing / storage and middleware infrastructure
+    \end{minipage}
+  };
+
+  \node (item3) [rectangle, minimum width=\expitem,
+  anchor=north west] at ([yshift=-\itemskilljump]item2.south west) {
+    \begin{minipage}{\expitem}
+      CI, Documentation, Issues/Improvement Tracking
+    \end{minipage}
+  };
+
+  \node (skill3) [rectangle, minimum width=\expskill,
+  anchor=south west] at ([xshift=\itemskilljump]item3.south east) {
+    \begin{minipage}{\expskill}
+      Github/Github actions, JIRA, Confluence
+    \end{minipage}
+  };
+
+  \node (item4) [rectangle, minimum width=\expitem,
+  anchor=north west] at ([yshift=-\itemskilljump]item3.south west) {
+    \begin{minipage}{\expitem}
+      Definition and implementation of the user interfaces for daily monitoring
+    \end{minipage}
+  };
+  
+  \node (skill4) [rectangle, minimum width=\expskill,
+  anchor=south west] at ([xshift=\itemskilljump]item4.south east) {
+    \begin{minipage}{\expskill}
+      Javalin, Apache Velocity, Javascript
+    \end{minipage}
+  };  
+
+  \node (item5) [rectangle, minimum width=\expitem,
+  anchor=north west] at ([yshift=-\itemskilljump]item4.south west) {
+    \begin{minipage}{\expitem}
+      Hardware resources definition, purchase, installation, deployment: 
+      \$20k/yr; 15 nodes / 544 CPUs / 4 TiB RAM / 500 TB storage
+    \end{minipage}
+  };
+
+   \node (skill5) [rectangle, minimum width=\expskill,
+  anchor=south west] at ([xshift=\itemskilljump]item5.south east) {
+    \begin{minipage}{\expskill}
+      Linux (Ubuntu)
+    \end{minipage}
+  };
+
+  \node (item6) [rectangle, minimum width=\expitem,
+  anchor=north west] at ([yshift=-\itemskilljump]item5.south west) {
+    \begin{minipage}{\expitem}
+      Outreach support for researchers, students, and dedicated
+      outreach program
+    \end{minipage}
+  };
+
+  \node (item7) [rectangle, minimum width=\expitem,
+  anchor=north west] at ([yshift=-\itemskilljump]item6.south west) {
+    \begin{minipage}{\expitem}
+      Technical Expert for the Minor Planet Center Users Group
+      (Small Bodies Node/NASA)
+    \end{minipage}
+  };
+  
+  \node (skill7) [rectangle, minimum width=\expskill,
+  anchor=south west] at ([xshift=\itemskilljump]item7.south east) {
+    \begin{minipage}{\expskill}
+      Since May 2020 (1 year)
+    \end{minipage}
+  };
+\end{tikzpicture}
+
+\begin{tikzpicture}
+  \node (origin) [rectangle, minimum width=\linewidth,
+  anchor=south west,
+    shading = axis, shading angle=135,
+    left color=left!20!white,
+    right color = right!20!white] {
+    \begin{minipage}{0.95\linewidth}
+      \subsection{System Administrator / Front-End Software Engineer} \hfill
+      Pan-STARRS 1 Telescope / Image Processing Pipeline
+
+      Jun 2010 - Feb 2013 (2.75 years)
+      \hfill
+      Researcher Corp. of Univ. of Hawai`i / Institute for Astronomy
+
+      Responsible for hardware resources administration and front-end
+      activities
+    \end{minipage}
+  };
+
+  \node (item1) [rectangle, minimum width=\expitem,
+  anchor=north west] at ([xshift=\itemskilljump, yshift=-\itemskilljump]origin.south west) {
+    \begin{minipage}{\expitem}
+      MySQL servers administration and optimization; HTTP
+      Server administration; Cluster administration; Monitoring
+    \end{minipage}
+  };
+
+  \node (skill1) [rectangle, minimum width=\expskill,
+  anchor=west] at ([xshift=\itemskilljump]item1.east) {
+    \begin{minipage}{\expskill}
+      MySQL, bash, C, Perl, Python
+
+      Apache HTTP; NFS; Ganglia; Nagios.
+    \end{minipage}
+  };
+
+  \node (item2) [rectangle, minimum width=\expitem,
+  anchor=north west] at ([xshift=\itemskilljump, yshift=-\itemskilljump]item1.south west) {
+    \begin{minipage}{\expitem}
+      Liaison between subsystems: Interface definition,
+      requirements, and implementation
+    \end{minipage}
+  };
+
+  \node (skill2) [rectangle, minimum width=\expskill,
+  anchor=west] at ([xshift=\itemskilljump]item2.east) {
+    \begin{minipage}{\expskill}
+      PHP, HTML, CSS, JavaScript
+    \end{minipage}
+  };
+\end{tikzpicture}
+
+\begin{tikzpicture}
+  \node (origin) [rectangle, minimum width=\linewidth,
+  anchor=south west,
+    shading = axis, shading angle=135,
+    left color=left!20!white,
+    right color = right!20!white] {%
+    \begin{minipage}{0.95\linewidth}
+      \subsection{Integration Software Engineer  / Contractor} \hfill
+      Atos Origin (Toulouse, France)
+
+      Mar 2008 - Apr 2010 (2 years)
+      \hfill
+      Customer: European Space Agency (GAIA Project)
+
+      Standardization and integration of scientific computing software
+      modules
+    \end{minipage}
+  };
+  
+  \node (item1) [rectangle, minimum width=\expitem, anchor=north west]
+  at ([xshift=\itemskilljump, yshift=-\itemskilljump]origin.south
+  west) {
+    \begin{minipage}{\expitem}
+      Responsible for software development and documentation
+      activities for producing an integrated scientific computing
+      framework based on machine-learning techniques
+    \end{minipage}
+  };
+  \node (skill1) [rectangle, minimum width=\expskill,
+  anchor=west] at ([xshift=\itemskilljump]item1.east) {
+    \begin{minipage}{\expskill}
+      Java, JUnit
+
+      \medskip
+      weka, SVM, ANN
+    \end{minipage}
+  };
+  
+  \node (item2) [rectangle, minimum width=\expitem, anchor=north west]
+  at ([xshift=\itemskilljump, yshift=-\itemskilljump]item1.south
+  west) {
+    \begin{minipage}{\expitem}
+      Design and implementation of an original automated code
+      generation framework for the execution of scientific workflows
+    \end{minipage}
+  };
+  \node (skill2) [rectangle, minimum width=\expskill,
+  anchor=west] at ([xshift=\itemskilljump]item2.east) {
+    \begin{minipage}{\expskill}
+      UML, Java, ant
+    \end{minipage}
+  };
+
+  \node (item3) [rectangle, minimum width=\expitem, anchor=north west]
+  at ([xshift=\itemskilljump, yshift=-\itemskilljump]item2.south
+  west) {
+    \begin{minipage}{\expitem}
+      Coordination with teams of astronomers and physicists at
+      participating European partner universities (England, Germany,
+      Spain, Italy, Greece, France, Belgium) to see their code tested
+      and integrated into the workflows
+
+    \end{minipage}
+  };
+  \node (skill3) [rectangle, minimum width=\expskill,
+  anchor=west] at ([xshift=\itemskilljump]item3.east) {
+    \begin{minipage}{\expskill}
+      JNI, SVN, Wiki, \LaTeX{}, Mantis, XML/XSLT
+    \end{minipage}
+  };
+
+  \node (item4) [rectangle, minimum width=\expitem, anchor=north west]
+  at ([xshift=\itemskilljump, yshift=-\itemskilljump]item3.south
+  west) {
+    \begin{minipage}{\expitem}
+      Liaison between scientific teams and ESA industrialization
+      partners
+    \end{minipage}
+  };
+\end{tikzpicture}
+
+\newpage
+
+\begin{tikzpicture}
+  \node (origin) [rectangle, minimum width=\linewidth,
+  anchor=south west,
+    shading = axis, shading angle=135,
+    left color=left!20!white,
+    right color = right!20!white] {
+    \begin{minipage}{0.95\linewidth}
+      \subsection{Test Software Engineer  / Contractor} \hfill
+      CRIL Technology (Toulouse, France)
+
+      Aug 2006 - Feb 2008 (1.5 years)
+      \hfill
+      Customer: EADS Astrium
+
+      Design and development of benchmarks for earth-obervation instruments
+    \end{minipage}
+  };
+
+  \node (item1) [rectangle, minimum width=\expitem, anchor=north west]
+  at ([xshift=\itemskilljump, yshift=-\itemskilljump]origin.south
+  west) {
+    \begin{minipage}{\expitem}
+      Requirement analysis, specification, design, and development of
+      a generic benchmark for testing and validation of earth
+      observation optical instruments
+
+      Specification, design, and development of a software
+      decommutator of satellite images.
+
+      Technical and commercial support for software development
+      activities
+
+      Technical advising for responses to proposal bids
+    \end{minipage}
+  };
+
+  \node (skill1) [rectangle, minimum width=\expskill,
+  anchor=west] at ([xshift=\itemskilljump]item1.east) {
+    \begin{minipage}{\expskill}
+      UML, Java, Python, XML, XSD/JaxB, Java Web Start, PV-Wave/Jwave,
+      ClearCase, ClearQuest
+
+      \medskip
+      MS Windows 2003/XP32/XP64
+    \end{minipage}
+  };
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+  \node (origin) [rectangle, minimum width=\linewidth,
+  anchor=south west,
+    shading = axis, shading angle=135,
+    left color=left!20!white,
+    right color = right!20!white] {
+    \begin{minipage}{0.95\linewidth}
+      \subsection{Test Software Engineer  / Contractor}
+      \hfill
+      CRIL Technology (Toulouse, France)
+
+      Aug 2006 - Feb 2008 (1.5 years)
+      \hfill
+      Customer: French Civil Air Navigation Control Agency (DSNA)
+
+      Development and integration of stubs for air traffic control
+    \end{minipage}
+  };
+
+  \node (item1) [rectangle, minimum width=\expitem, anchor=north west]
+  at ([xshift=\itemskilljump, yshift=-\itemskilljump]origin.south
+  west) {
+    \begin{minipage}{\expitem}
+      Requirement analysis, design, development, software quality
+      analysis, and documentation of a simulation tool
+
+      Technical and scientific advising for digital imaging issues
+      (benchmarking and validation, data compression, robot
+      localization)
+
+      System maintenance on Sun servers
+    \end{minipage}
+  };
+
+  \node (skill1) [rectangle, minimum width=\expskill,
+  anchor=west] at ([xshift=\itemskilljump]item1.east) {
+    \begin{minipage}{\expskill}
+      UML, C++, libxml2, ACE, Corba, rpmbuild
+
+      \medskip
+      Linux (RHEL), Unix (Solaris, AIX, HP-UX)
+    \end{minipage}
+  };
+\end{tikzpicture}
+
+\begin{tikzpicture}
+  \node (origin) [rectangle, minimum width=\linewidth,
+  anchor=south west,
+    shading = axis, shading angle=135,
+    left color=left!20!white,
+    right color = right!20!white] {
+    \begin{minipage}{0.95\linewidth}
+      \subsection{Software Developer  / Freelance}
+      \hfill
+      eEyeCare GmbH (Erlangen, Germany)
+      
+      Mar 2004 - Oct 2004 (0.5 years)
+
+      Design and development of a tool for retinal images analysis
+    \end{minipage}
+  };
+
+  \node (item1) [rectangle, minimum width=\expitem, anchor=north west]
+  at ([xshift=\itemskilljump, yshift=-\itemskilljump]origin.south
+  west) {
+    \begin{minipage}{\expitem}
+      Design and development of a tool for retinal image analysis
+
+      Quantitative performance analysis (algorithmic complexities,
+      comparison of various implemented methods, experimental
+      validation against ground truth)
+      
+    \end{minipage}
+  };
+
+  \node (skill1) [rectangle, minimum width=\expskill,
+  anchor=west] at ([xshift=\itemskilljump]item1.east) {
+    \begin{minipage}{\expskill}
+      UML, Design Patterns, C++, Java (MMI), XML
+    \end{minipage}
+  };
+\end{tikzpicture}
+
+\begin{tikzpicture}
+  \node (origin) [rectangle, minimum width=\linewidth,
+  anchor=south west,
+    shading = axis, shading angle=135,
+    left color=left!20!white,
+    right color = right!20!white] {
+    \begin{minipage}{0.95\linewidth}
+      \subsection{Teaching}
+      \hfill
+      18 semesters total
+      
+      All teaching activities were at the undergraduate level
+    \end{minipage}
+  };
+
+  \node (item1) [rectangle, minimum width=\expitem, anchor=north west]
+  at ([xshift=\itemskilljump, yshift=-\itemskilljump]origin.south
+  west) {
+    \begin{minipage}{\expitem}
+      Adjunct professor  \hfill University of Hawai`i
+
+      2015-2016 (3 semesters)
+    \end{minipage}
+  };
+  \node (skill1) [rectangle, minimum width=\expskill,
+  anchor=north west] at ([xshift=\itemskilljump]item1.north east) {
+    \begin{minipage}{\expskill}
+      Operating Systems
+    \end{minipage}
+  };
+    
+  
+  \node (item2) [rectangle, minimum width=\expitem, anchor=north west]
+  at ([xshift=\itemskilljump, yshift=-\itemskilljump]item1.south
+  west) {
+    \begin{minipage}{\expitem}
+      Adjunct professor \hfill University of Koblenz-Landau (Koblenz, Germany)
+
+      2002-2004 (3 semesters)
+    \end{minipage}
+  };
+  \node (skill2) [rectangle, minimum width=\expskill,
+  anchor=west] at ([xshift=\itemskilljump]item2.east) {
+    \begin{minipage}{\expskill}
+      Digital Image Databases
+      
+      Geometry for Digital Imaging
+
+      Introduction to C++
+    \end{minipage}
+  };
+  
+  \node (skill3) [rectangle, minimum width=\expskill,
+  anchor=north west] at ([xshift=\itemskilljump]skill2.south west) {
+    \begin{minipage}{\expskill}
+      Calculus, Algebra
+
+      Statistics
+
+      C programming
+
+      Introduction to graph theory
+    \end{minipage}
+  };
+  \node (item3) [rectangle, minimum width=\expitem, anchor=north east]
+  at ([xshift=\itemskilljump, yshift=-\itemskilljump]skill3.north
+  west) {
+    \begin{minipage}{\expitem}
+      Teaching Assistant then Adjunct professor \hfill University of Saint-Étienne
+
+      1997-2002 (12 semesters) \hfill (Saint-Étienne, France)
+    \end{minipage}
+  };
+\end{tikzpicture}
+
+\definecolor{leftedu} {HTML}{87CEEB}
+\definecolor{rightedu} {HTML}{B6D0E2}
+\section{edu}{Education}{leftedu}{rightedu}
+
+\begin{tikzpicture}
+  \node (origin) [rectangle, minimum width=\linewidth,
+  anchor=south west] {
+    \begin{minipage}{1.0\linewidth}
+      Nov 2001 - PhD in Computer Science / Digital Imaging –
+      University of Saint-Étienne. France
+
+      \hspace*{.5in}\emph{On the Use of Hypergraph Theory for Digital Image Processing}
+
+      Jun 1997 - M.S. (equivalent) in Computer Science /
+      Digital Imaging - University of Saint-Étienne, France
+
+      \hspace*{.5in}\emph{Multitextured image segmentation with a pyramid}
+
+      Jun 1995 - B.S. (equivalent) in Engineering Mathematics -
+      University of Saint-Étienne, France
+    \end{minipage}
+  };
+\end{tikzpicture}
+
+
+\end{document}
