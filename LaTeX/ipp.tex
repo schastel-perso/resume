@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+  \experience{System Administrator/Front-End Software Engineer}{%
+    Pan-STARRS 1 Telescope / Image Proc. Pipeline}{%
+    Researcher Corp. of Univ. of Hawai`i / Institute for Astronomy}{%
+    Jun 2010 - Feb 2013 --- 2.75 years}{%
+    Hardware resources administration and front-end activities}
+
+  \node (item1) [rectangle, minimum width=\linewidth,
+  anchor=north west] at ([xshift=\itemskilljump, yshift=-\itemskilljump]origin.south west) {
+    \begin{minipage}{1.0\linewidth}
+      \textbf{MySQL} servers administration and optimization; HTTP
+      Server administration; Cluster administration; Monitoring
+
+      \hfill{}MySQL, bash, C, Perl, \textbf{Python}, Apache HTTP; NFS;
+      Ganglia; Nagios.
+    \end{minipage}
+  };
+
+  \node (item2) [rectangle, minimum width=\expitem,
+  anchor=north west] at ([xshift=\itemskilljump, yshift=-\itemskilljump]item1.south west) {
+    \begin{minipage}{\linewidth}
+      Liaison between subsystems: Interface definition,
+      requirements, and implementation
+      \hfill{}PHP, HTML, CSS, \textbf{JavaScript}
+    \end{minipage}
+  };
+\end{tikzpicture}

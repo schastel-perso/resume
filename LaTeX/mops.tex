@@ -1,0 +1,109 @@
+\begin{tikzpicture}
+  \experience{Software and Data Engineer}{%
+    \href{https://neo.ifa.hawaii.edu/}{Pan-STARRS Telescopes - Moving
+      Objects Processing System (MOPS)}}{%
+    \href{https://www.rcuh.com/}{Research Corp. of Univ. of Hawai`i} / \href{https://www.ifa.hawaii.edu/}{Inst. for Astronomy} / \href{https://www.nasa.gov/}{NASA}}{%
+    Since Mar 2013 --- 8.5 years}{%
+    Specification, migration, rationalization, improvement, expansion,
+    and maintenance of the MOPS}
+
+  \node (item1) [rectangle, minimum width=\linewidth,
+  anchor=north west] at ([xshift=\itemskilljump, yshift=-\itemskilljump]origin.south west) {
+    \begin{minipage}{1.0\linewidth}
+      \textit{Objective:} Find all asteroids/comets larger than 140m
+      coming near the Earth.
+      
+      \textit{Challenge:} 600 observations/night ( = 4TB/night). ETL
+      them so that new asteroids can quickly be followed up by other
+      telescopes around the globe. The MOPS must be running 24/7,
+      365/yr.
+
+      \textit{2013:} Processing started at 8am, finished at 6pm
+
+      \textit{2021:} Stream-based processing that starts with the
+      first observation and finishes at 7am
+
+      Software samples:
+      \faIcon{github}\href{https://github.com/psmops}{github.com/psmops}
+      (unfortunately not all of it since some of it is proprietary)
+    \end{minipage}
+  };
+
+  \node (item2) [rectangle, minimum width=\linewidth,
+  anchor=north west] at ([xshift=\itemskilljump, yshift=-\itemskilljump]item1.south west) {
+    \begin{minipage}{1.0\linewidth}
+      \textbf{Scientific Workflow Design and Development}: Performance
+      can only be achieved through automation. The existing 2013
+      system required many blocking manual human interventions and was
+      replaced by a fully automated one. I also moved the HTCondor
+      based distributed computing to Kubernetes using Docker
+
+      \hfill\textbf{Kubernetes}, \textbf{Ceph}, \textbf{Docker}, HTCondor,
+      MySQL, PostgreSQL, Java, JPA/Hibernate, bash
+    \end{minipage}
+  };
+  
+  \node (item3) [rectangle, minimum width=\linewidth,
+  anchor=north west] at ([xshift=\itemskilljump, yshift=-\itemskilljump]item2.south west) {
+    \begin{minipage}{1.0\linewidth}
+      \textbf{Integration, parallelization, and distribution}: of data
+      processing functions: Scientists write software and are
+      oblivious of system constraints. I was in charge of their
+      integration in the system. Constraints related to the
+      parallelization and distribution forced sometimes full rewrites
+      of the initial code.
+
+      \hfill\textbf{Java}, \textbf{C++}, \textbf{Python}, C, R, Fortran, IDL
+    \end{minipage}
+  };
+
+  \node (item4) [rectangle, minimum width=\linewidth,
+  anchor=north west] at ([xshift=\itemskilljump, yshift=-\itemskilljump]item3.south west) {
+    \begin{minipage}{1.0\linewidth}
+      \textbf{Definition and rationalization} of the hardware
+      computing and storage medium-size HPC infrastructure. Migration
+      between two sites (while keeping it up). Purchase, installation,
+      deployment: \$20k/yr; 15 nodes / 544 CPUs / 4 TiB RAM / 500 TB
+      storage.
+
+      \hfill\textbf{Linux/Ubuntu}, Gentoo, \textbf{Kubernetes},
+      \textbf{cephfs}, ganglia, nagios...
+    \end{minipage}
+  };
+
+  \node (item5) [rectangle, minimum width=\linewidth,
+  anchor=north west] at ([xshift=\itemskilljump, yshift=-\itemskilljump]item4.south west) {
+    \begin{minipage}{1.0\linewidth}
+      \textbf{Software Stack Code Management and Documentation}  
+
+      \hfill\textbf{CI} through Github actions, \textbf{git}, hg, subversion,
+      \textbf{Jira}, \textbf{Confluence}
+    \end{minipage}
+  };
+
+  \node (item6) [rectangle, minimum width=\linewidth,
+  anchor=north west] at ([xshift=\itemskilljump, yshift=-\itemskilljump]item5.south west) {
+    \begin{minipage}{1.0\linewidth}
+      \textbf{GUI Design and Development}: The astronomers required a
+      reactive interface to monitor and vet the processing products.
+
+      \hfill\textbf{Java} (Javalin, Apache Velocity), \textbf{Javascript}, Perl/Mason 
+    \end{minipage}
+  };
+
+  \node (item7) [rectangle, minimum width=\linewidth,
+  anchor=north west] at ([xshift=\itemskilljump, yshift=-\itemskilljump]item6.south west) {
+    \begin{minipage}{1.0\linewidth}
+      \textbf{Outreach} support for researchers, students, and
+      \href{http://iasc.cosmosearch.org/}{dedicated outreach program}
+    \end{minipage}
+  };
+
+  \node (item8) [rectangle, minimum width=\linewidth,
+  anchor=north west] at ([xshift=\itemskilljump, yshift=-\itemskilljump]item7.south west) {
+    \begin{minipage}{1.0\linewidth}
+      Since May 2020 (1.5 year) \textbf{Technical Expert} for the Minor Planet Center Users Group (Small
+      Bodies Node/NASA)
+    \end{minipage}
+  };
+\end{tikzpicture}
