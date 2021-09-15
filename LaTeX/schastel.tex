@@ -1,4 +1,4 @@
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 
 \newlength\tindent
 \setlength{\tindent}{\parindent}
@@ -11,8 +11,10 @@
 \usepackage{ebgaramond}
 \renewcommand{\familydefault}{\sfdefault}
 
+\usepackage{longtable}
+
 \usepackage{geometry}
-\geometry{ansiapaper, margin=0.75in, top=0.7in}
+\geometry{ansiapaper, margin=0.9in}
 \usepackage{tikz}
 \usetikzlibrary{calc}
 
@@ -21,6 +23,7 @@
 \usepackage{wasysym}
 \usepackage{marvosym}
 \usepackage{fontawesome5}
+\usepackage{starfont}
 
 \renewcommand{\section}[4]{%
   \medskip
@@ -40,164 +43,387 @@
   \end{tikzpicture}
 }
 
-\definecolor{colorsection}{HTML}{7393B3}
+%\definecolor{colorsection}{HTML}{7393B3}
+\definecolor{colorsection}{HTML}{dd0000}
+% \definecolor{colorsection}{HTML}{00ff00}
+
 \newcommand{\mynewsection}[2]{%
   \medskip
 
   \textbf{\color{colorsection}\LARGE {#2}\hspace{0.25in}{#1}}
 }
 
+\definecolor{colorlink}{HTML}{ff4500}
 
-\renewcommand{\subsection}[1]{%
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  % colorlinks=false,
+  % linktocpage=true,
+  % linkcolor=darkblue,
+  % filecolor=magenta,      
+  % urlcolor=orange,
+  pdftitle={Serge CHASTEL - Resume - 2021-09-14},
+}
+
+\newcommand{\myhref}[2]{%
+  \href{#1}{\underline{\color{colorlink}#2}}}
+\newcommand{\myfaIcon}[1]{%
+  {\color{colorsection}\faIcon{#1}}}
+
+\newcommand{\experience}[4]{%
+  \medskip
+  {\color{colorsection}\textbf{\large #1}}
+  \hfill
+  \textit{\small #2}
+
+  {\small #3}
+  \hfill    
+  \textit{\small #4}}
+\newcommand{\notexperience}[2]{%
+  \medskip
+  {\color{colorsection}{#1} {\large \textbf{#2}}}}
+
+\begin{document}
+
+\begin{tabular}{p{100mm}l}
+  \begin{tabular}{l}
+    {\LARGE \textbf{SERGE CHASTEL}} \\
+    {\Large Software/Data Engineer} \\
+    \\
+    \myfaIcon{map-marker-alt}  \begin{tabular}[t]{l}
+                               2063 St Louis Dr. \\
+                               Honolulu HI, 96816
+                             \end{tabular}
+    \hspace*{10mm} \myfaIcon{phone} +1 808 277 5687
+  \end{tabular}
+  &
+    \begin{tabular}{l}
+      \myfaIcon{envelope} \myhref{mailto:schastel.at.work@gmail.com}{schastel.at.work@gmail.com}
+      \\
+      \myfaIcon{linkedin} \myhref{https://www.linkedin.com/in/serge-chastel-76aa46218/}{linkedin/serge-chastel}
+      \\
+      \myfaIcon{github} \myhref{https://github.com/schastel}{github/schastel}
+      and \myhref{https://github.com/psmops}{github/psmops}
+      \\
+      \myfaIcon{calendar-alt} Timezone: HST / UT+10
+      \\
+    \end{tabular}
+\end{tabular}
+
+\medskip
+\definecolor{colorsection}{HTML}{ff4500}
+
+% \hspace*{10mm}\hrulefill\hspace*{10mm}
+
+\null\hfill\begin{minipage}{0.87\linewidth}
+  %\raggedright
+  \large
+  17+ years of experience designing, developing, integrating, and
+  deploying cutting-edge engineering solutions based on distributed
+  computing and distributed storage in research institutions and
+  high-tech industries
+\end{minipage}\hfill\null
+
+\bigskip
+
+% \hspace*{10mm}\hrulefill\hspace*{10mm}
+
+% \medskip
+
+\begin{minipage}[t]{0.29\linewidth}
+
+  \notexperience{\faTasks}{Technical Skills}
+
+  \medskip
+
+  Java, Python, bash, SQL, Javascript, C, C++
+
+  \medskip
+
+  Kubernetes
+
+  \medskip
+
+  Docker
+
+  \medskip
+
+  Ceph
+
+  \medskip
+
+  HTCondor
+
+  \medskip
+
+  MySQL
+
+  \medskip
+
+  PostgreSQL
+
+  \medskip
+
+  Linux
+
+  \bigskip
+  \bigskip
+
+  \notexperience{\faUserNinja}{Expertise}
 
   \medskip
   
-  %\noskill{%
-    \textbf{\large #1}
-  %}
-}
+  Distributed Computing
 
-% \definecolor{left} {HTML}{AFE1AF}
-% \definecolor{right} {HTML}{50C878}
+  \medskip
 
-\usepackage{hyperref}
-\hypersetup{
-  colorlinks=true,
-  linkcolor=darkblue,
-  filecolor=magenta,      
-  urlcolor=cyan,
-  pdftitle={Serge CHASTEL - Resume - 2021-09-03},
-}
+  Distributed Storage
+
+  \medskip
+
+  High-Throughput Processing
+
+  \bigskip
+  \bigskip
+
+  \notexperience{\faToolbox}{Professional Skills}
+
+  \medskip
+
+  ETL
+
+  \medskip
+
+  Dataflows
+
+  \medskip
+
+  Problem Solving
+
+  \medskip
+
+  Software Design
+
+  \medskip
+
+  Testing
   
-\begin{document}
+  \medskip
 
-{ \Large \textbf{Serge CHASTEL, PhD} Software/Data Engineer }
+  Outreach
 
-\medskip
-        
-17+ years of experience designing, developing, integrating, and
-deploying cutting-edge engineering solutions based on distributed
-computing and distributed storage in research institutions and
-high-tech industries
+\end{minipage}\hfill
+\begin{minipage}[t]{0.67\linewidth}
+  \mynewsection{Experience}{\faBriefcase}
+  
+  \bigskip
 
-\Mobilefone{}
-+1 (808) 277-5687
-\hfill
-\Email{}
-\href{mailto:schastel.at.work@gmail.com}{schastel.at.work@gmail.com}
-\hfill
-\faIcon{linkedin}
-\href{https://www.linkedin.com/in/serge-chastel-76aa46218/}{LinkedIn}
-\hfill
-\Letter{}
-\begin{tabular}[t]{l}
-  2063 St Louis Dr. \\
-  Honolulu HI, 96816
-\end{tabular}
+  \experience{Software Engineer}{Pan-STARRS Telescopes}{Since March
+    2013 (8+ years)}{Honolulu, Hawai`i, USA}
 
-\mynewsection{Skills}{\faTasks}
+  \bigskip
+  
+  {\large Software Lead of the Moving Objects Processing System}
 
-\begin{tikzpicture}
-  \node [rectangle, minimum width=\linewidth,
-  anchor=north west] {
-    \begin{minipage}{1.0\linewidth}
-      \large Languages: \textbf{Java}, \textbf{Python}, JavaScript,
-      \textbf{bash}, \textbf{SQL}, C, \textbf{C++}, \LaTeX{}, Fortran
+  \bigskip
+  
+  $\bullet$ Transformed the software stack running in HTCondor to a
+  service-based one based on Kubernetes and docker resulting in a
+  significant speed-up for the data processing
 
-      Technologies: \textbf{Kubernetes}, \textbf{Docker},
-      \textbf{Ceph}, \textbf{HTCondor}, MySQL, PostgreSQL, hg/git
+  \medskip
+  
+  $\bullet$ Automated all dataflows removing all manual
+  operations
 
-      OS: \textbf{Linux} (Ubuntu, Gentoo, RedHat)
-    \end{minipage}
-  };
-\end{tikzpicture}
+  \medskip
 
-\mynewsection{Experience}{\faBriefcase}
+  $\bullet$ Expanded and reimplemented data processing, data analysis,
+  and data visualization functions using state-of-the-art tools and
+  methods
 
-\newlength{\expitem}
-\setlength{\expitem}{0.60\linewidth}
+  \medskip
 
-\newlength{\expskill}
-\setlength{\expskill}{0.39\linewidth}
+  $\bullet$ Redefined and built the hardware stack to create a
+  medium-size HPC infrastructure
+  
+  \medskip
 
-\newlength{\itemskilljump}
-\setlength{\itemskilljump}{0mm}
+  $\bullet$ Successfully proposed the adoption of modern tools for
+  configuration management, testing, documentation, and tracing
 
-% \experience{}{%
-% }{%
-% }{%
-% }{%
-% }
-\newcommand{\experience}[5]{%
-  \node (origin) [rectangle, minimum width=1.0\linewidth,
-  anchor=south west,
-  inner ysep = 2pt,
-  shading = axis, shading angle=0,
-  left color=colorsection!30!white,
-  right color = colorsection!10!white] {%
-    \hspace*{-7mm}
-    \begin{minipage}{0.95\linewidth}
-      \medskip
-        
-      \textbf{\large #1}
-      \hfill
-      \textit{\small #2}
+  \medskip
 
-      {\small #4}
-      \hfill    
-      \textit{\small #3}
+  $\bullet$ Outreach support for researchers, students, and Pan-STARRS
+  dedicated public program
 
-      \textbf{#5}
-    \end{minipage}
-  };
-}
+  \medskip
 
-\input{mops}
-\input{ipp}
-\input{cnes}
-\input{astrium}
-\input{dsna}
-\input{eec}
-\input{teaching}
+  $\bullet$ (Since May 2020) Liaison and Technical Expert with the Small Bodies
+  Node / NASA
 
-\mynewsection{Education}{\faGraduationCap}
-% \definecolor{leftedu} {HTML}{87CEEB}
-% \definecolor{rightedu} {HTML}{B6D0E2}
-% \section{edu}{Education}{leftedu}{rightedu}
+  \bigskip
+  
+  \experience{Software Engineer}{Pan-STARRS1 Science Consortium}{June
+    2010 - February 2013 (3 years)}{Honolulu, Hawai`i, USA}
 
-\begin{tikzpicture}
-  \node (origin) [rectangle, minimum width=\linewidth,
-  anchor=south west] {
-    \begin{minipage}{1.0\linewidth}
-      Nov 2001 - \textbf{PhD} in Computer Science / Digital Imaging –
-      University of Saint-Étienne. France
+  \bigskip
 
-      \hspace*{.5in}\emph{On the Use of Hypergraph Theory for Digital Image Processing}
+  {\large System Administrator and Front-End Developer}
+  
+  \medskip
 
-      Jun 1997 - \textbf{M.S.} (equivalent) in Computer Science /
-      Digital Imaging - University of Saint-Étienne, France
+  $\bullet$ Middleware administration and optimization
 
-      \hspace*{.5in}\emph{Multitextured image segmentation with a pyramid}
+  \medskip
+  
+  $\bullet$ Developed an interface for cluster and workflow monitoring
+\end{minipage}
 
-      Jun 1995 - \textbf{B.S.} (equivalent) in Engineering Mathematics -
-      University of Saint-Étienne, France
-    \end{minipage}
-  };
-\end{tikzpicture}
+\begin{minipage}[t]{0.29\linewidth}
 
-\mynewsection{Miscellaneous}{\faBookmark}
+  \notexperience{\faGraduationCap}{Education}
 
-Languages: French (native), German (Written and oral comprehension)
+  PhD Computer Science
 
-\emph{I'm not sure if I really qualify as a scholar
-  (\href{https://scholar.google.com/citations?user=Dw3bjDYAAAAJ&hl=en}{Google})
-  or a researcher
-  (\href{https://www.researchgate.net/profile/Serge-Chastel}{ResearchGate})
-  but I take pride in thinking that the software and the system I
-  develop seems useful enough to grant me a co-authorship in many
-  high-level scientific publications. e.g.:} for the
-\href{https://en.wikipedia.org/wiki/\%CA\%BBOumuamua}{first
-  interstellar object ever observed}, the article in
-\href{https://www.nature.com/articles/nature25020}{Nature}.
+  {\small 2001 -  Saint-\'Etienne. France}
+  
+  \medskip
+
+  MS Digital Imaging
+
+  {\small 1997 - Saint-Étienne, France}
+
+  \medskip
+
+  BS {\small Engineering Mathematics}
+
+  {\small 1995 - Saint-Étienne, France}
+
+  \bigskip
+  \bigskip
+
+  \notexperience{\faVial}{%
+    \begin{tabular}{l}
+      Contribution \\
+      to Science
+    \end{tabular}}
+
+  \myfaIcon{researchgate}
+  \myhref{https://www.researchgate.net/profile/Serge-Chastel}{ResearcherGate}
+
+  \myfaIcon{university}
+  \myhref{https://scholar.google.com/citations?user=Dw3bjDYAAAAJ&hl=en}{Google Scholar}
+
+  {\color{colorsection}\Ceres{}}
+  \myhref{https://en.wikipedia.org/wiki/\%CA\%BBOumuamua}{`Oumuamua}
+
+  \bigskip
+  \bigskip
+  \notexperience{\faChalkboardTeacher}{Teaching}
+
+  {\small All courses taught at the undergraduate level
+  
+    $\bullet$ Operating Systems, University of Hawai`i at
+    M\={a}noa (USA), 3 semesters, 2015-2016
+
+    $\bullet$ C++, Digital Imaging, Image Databases, University of
+    Koblenz-Landau (Germany), 3 semesters, 2003-2004
+
+    $\bullet$ Calculus, Algebra, Statistics, C Programming, Graph
+    Theory, University of Saint-\'Etienne (France), 12 semesters,
+    1997-2002}
+
+  \bigskip
+  \bigskip
+
+  \notexperience{\faLanguage}{Languages}
+
+  French (Native)
+
+  German (Written and oral understanding)
+
+\end{minipage}\hfill
+\begin{minipage}[t]{0.67\linewidth}
+  \mynewsection{Experience (cont.)}{\faBriefcase}
+  
+  \experience{Software Engineer/Contractor}{Atos Origin /
+    ESA}{March 2008 - April 2010 (2 years)}{Toulouse, France}
+
+  \medskip
+
+  {\large Integrate scientific computing software modules}
+
+  \medskip
+
+  $\bullet$ Responsible for software standardization, integration and
+  documentation activities for producing an integrated scientific
+  computing framework based on machine learning techniques
+
+  \medskip
+  
+  $\bullet$ Designed and implemented of an original automated code
+  generation framework for the execution of scientific workflows
+
+  \medskip
+
+  $\bullet$ Liaison for teams of scientists at participating European
+  partner universities and ESA industrialization partners
+
+  \bigskip
+  
+  \experience{Test Software Engineer / Contractor}{%
+    EADS Astrium}{%
+    August 2006 - February 2008 (2 years)}{%
+    Toulouse, France}
+  
+  \medskip
+
+  {\large Design and development of a generic benchmark for
+    Earth-observation satellite payloads}
+
+  \medskip
+
+  $\bullet$ Requirement analysis, specification, design, and
+  development of a generic benchmark for testing and validation of
+  Earth-observation optical instruments
+
+  \medskip
+
+  $\bullet$ Supported benchmark use for the Alsat satellite
+  integration
+
+  \bigskip
+  
+  \experience{Test Software Engineer / Contractor}{%
+    DSNA}{%
+    March 2005 - July 2006 (1 year)}{%
+    Toulouse, France}
+
+  \medskip
+  
+  {\large Build stubs for air traffic control testing}
+
+  \medskip
+
+  $\bullet$ Implemented a scenario player simulating events for the
+  software being tested
+
+  \medskip
+
+  $\bullet$ Implemented components reacting to the system being tested
+
+  \bigskip
+  
+  \experience{Software Developer / Freelance}{%
+    eEyeCare GmbH}{%
+    Mar 2004 - Nov 2004 (9 months)}{%
+    Erlangen, Germany}
+  
+  \medskip
+
+  {\large Developed a tool for retinal images analysis}
+  
+\end{minipage}
 
 \end{document}
