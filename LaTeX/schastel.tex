@@ -1,75 +1,56 @@
 \documentclass[12pt]{article}
 
+% Layout
+\usepackage{geometry}
+\geometry{ansiapaper, margin=0.9in}
+
 \newlength\tindent
 \setlength{\tindent}{\parindent}
 \setlength{\parindent}{0pt}
 \renewcommand{\indent}{\hspace*{\tindent}}
 \pagestyle{empty}
 
-\usepackage{graphicx}
-% \usepackage{times}
+% Font
 \usepackage{ebgaramond}
 \renewcommand{\familydefault}{\sfdefault}
 
-\usepackage{longtable}
-
-\usepackage{geometry}
-\geometry{ansiapaper, margin=0.9in}
-\usepackage{tikz}
-\usetikzlibrary{calc}
-
-\setlength\parindent{0mm}
-
-\usepackage{wasysym}
-\usepackage{marvosym}
-\usepackage{fontawesome5}
-\usepackage{starfont}
-
-\renewcommand{\section}[4]{%
-  \medskip
-  
-  \begin{tikzpicture}
-    \node (#1) [rectangle, minimum width=1.0\linewidth, 
-    anchor=north west,
-    shading = radial, % shading angle=135,
-    outer color=#4!80,inner color=white
-    % axis left color=#3,
-    % middle color = white,
-    % right color = #4
-    ]
-    at (0pt, 0pt) {
-      \textbf{\Large #2}
-    };
-  \end{tikzpicture}
-}
-
-%\definecolor{colorsection}{HTML}{7393B3}
+% Color
+\usepackage{xcolor}
+% colorsection: dark red. Changes to orangered after the intro part
 \definecolor{colorsection}{HTML}{dd0000}
-% \definecolor{colorsection}{HTML}{00ff00}
 
-\newcommand{\mynewsection}[2]{%
-  \medskip
-
-  \textbf{\color{colorsection}\LARGE {#2}\hspace{0.25in}{#1}}
-}
-
-\definecolor{colorlink}{HTML}{ff4500}
-
-\usepackage[hidelinks]{hyperref}
-\hypersetup{
-  % colorlinks=false,
-  % linktocpage=true,
-  % linkcolor=darkblue,
-  % filecolor=magenta,      
-  % urlcolor=orange,
-  pdftitle={Serge CHASTEL - Resume - 2021-09-15},
-}
-
-\newcommand{\myhref}[2]{%
-  \href{#1}{\underline{\color{colorlink}#2}}}
+% Symbols and icons
+\usepackage{fontawesome5}
+% Astronomy symbols
+\usepackage{starfont}
+% Colorized faIcon
 \newcommand{\myfaIcon}[1]{%
   {\color{colorsection}\faIcon{#1}}}
 
+% hyperlinks
+\definecolor{colorlink}{HTML}{ff4500}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Serge CHASTEL - Resume - 2021-09-15},
+}
+\newcommand{\myhref}[2]{%
+  \href{#1}{\underline{\color{colorlink}#2}}}
+
+% "section"
+% #1 = icon   #2 = section title ((Experience,  - #2 = Icon
+\newcommand{\mynewsection}[2]{%
+  \medskip
+
+  \textbf{\color{colorsection}\LARGE {#1}\hspace{0.25in}{#2}}
+}
+
+\newcommand{\mynewsubsection}[2]{%
+  \medskip
+  {\color{colorsection}{#1} {\large \textbf{#2}}}}
+
+% Experience:
+% #1=Title               #2=Employer
+% #3=Time info           #4=Location
 \newcommand{\experience}[4]{%
   \medskip
   {\color{colorsection}\textbf{\large #1}}
@@ -79,9 +60,6 @@
   {\small #3}
   \hfill    
   \textit{\small #4}}
-\newcommand{\notexperience}[2]{%
-  \medskip
-  {\color{colorsection}{#1} {\large \textbf{#2}}}}
 
 \begin{document}
 
@@ -132,7 +110,7 @@
 
 \begin{minipage}[t]{0.29\linewidth}
 
-  \notexperience{\faTasks}{Technical Skills}
+  \mynewsubsection{\faTasks}{Technical Skills}
 
   \medskip
 
@@ -169,7 +147,7 @@
   \bigskip
   \bigskip
 
-  \notexperience{\faUserNinja}{Expertise}
+  \mynewsubsection{\faUserNinja}{Expertise}
 
   \medskip
   
@@ -190,7 +168,7 @@
   \bigskip
   \bigskip
 
-  \notexperience{\faToolbox}{Professional Skills}
+  \mynewsubsection{\faToolbox}{Professional Skills}
 
   \medskip
 
@@ -218,7 +196,7 @@
 
 \end{minipage}\hfill
 \begin{minipage}[t]{0.67\linewidth}
-  \mynewsection{Experience}{\faBriefcase}
+  \mynewsection{\faBriefcase}{Experience}
   
   \bigskip
 
@@ -286,7 +264,7 @@
 
 \begin{minipage}[t]{0.29\linewidth}
 
-  \notexperience{\faGraduationCap}{Education}
+  \mynewsubsection{\faGraduationCap}{Education}
 
   PhD Computer Science
 
@@ -307,7 +285,7 @@
   \bigskip
   \bigskip
 
-  \notexperience{\faVial}{%
+  \mynewsubsection{\faVial}{%
     \begin{tabular}{l}
       Contribution \\
       to Science
@@ -324,7 +302,7 @@
 
   \bigskip
   \bigskip
-  \notexperience{\faChalkboardTeacher}{Teaching}
+  \mynewsubsection{\faChalkboardTeacher}{Teaching}
 
   {\small All courses taught at the undergraduate level
   
@@ -341,7 +319,7 @@
   \bigskip
   \bigskip
 
-  \notexperience{\faLanguage}{Languages}
+  \mynewsubsection{\faLanguage}{Languages}
 
   French (Native)
 
@@ -349,7 +327,7 @@
 
 \end{minipage}\hfill
 \begin{minipage}[t]{0.67\linewidth}
-  \mynewsection{Experience (cont.)}{\faBriefcase}
+  \mynewsection{\faBriefcase}{Experience (cont.)}
   
   \experience{Software Engineer/Contractor}{Atos Origin /
     ESA}{March 2008 - April 2010 (2 years)}{Toulouse, France}
