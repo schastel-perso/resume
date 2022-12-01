@@ -1,5 +1,10 @@
 \documentclass[12pt]{article}
 
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Serge CHASTEL - Resume - 2022-Nov},
+}
+
 % Layout
 \usepackage{geometry}
 \geometry{ansiapaper, margin=0.9in}
@@ -29,10 +34,6 @@
 
 % hyperlinks
 \definecolor{colorlink}{HTML}{ff4500}
-\usepackage[hidelinks]{hyperref}
-\hypersetup{
-  pdftitle={Serge CHASTEL - Resume - 2021-09-15},
-}
 \newcommand{\myhref}[2]{%
   \href{#1}{\underline{\color{colorlink}#2}}}
 
@@ -95,11 +96,10 @@
 
 \null\hfill\begin{minipage}{0.87\linewidth}
   %\raggedright
-  \large
-  17+ years of experience designing, developing, integrating, and
-  deploying cutting-edge engineering solutions based on distributed
-  computing and distributed storage in research institutions and
-  high-tech industries
+  \large 18 years of experience designing, developing, integrating,
+  and deploying cutting-edge engineering solutions based on
+  distributed computing and distributed storage in research
+  institutions and high-tech industries
 \end{minipage}\hfill\null
 
 \bigskip
@@ -142,10 +142,16 @@
 
   \medskip
 
-  Linux
+  Linux, Unix
 
-  \bigskip
-  \bigskip
+  \medskip
+
+  pytorch, tensorflow, scikit-learn
+
+  HuggingFace API
+  
+  \medskip
+  \medskip
 
   \mynewsubsection{\faUserNinja}{Expertise}
 
@@ -165,8 +171,8 @@
 
   High-Throughput Processing
 
-  \bigskip
-  \bigskip
+  \medskip
+  \medskip
 
   \mynewsubsection{\faToolbox}{Professional Skills}
 
@@ -198,66 +204,60 @@
 \begin{minipage}[t]{0.67\linewidth}
   \mynewsection{\faBriefcase}{Experience}
   
-  \bigskip
+  \experience{Senior Software Engineer}{Oracle Corp.}{Since June 2022 (5
+    months)}{(Remote, Honolulu, Hawai`i, USA)}
 
-  \experience{Software Engineer}{Pan-STARRS Telescopes}{Since March
-    2013 (8+ years)}{Honolulu, Hawai`i, USA}
+  \medskip
+  
+  {\large Oracle Cloud Infrastructure - Virtual Machine Control Plane
+    Infrastructure}
 
-  \bigskip
+  $\bullet$ R\&D: VM provisioning analysis, optimization, KPI
+  definition and measurement, documentation.
+
+  $\bullet$ Ops: Issues troubleshooting, testing, bug fixing, incident
+  management and root cause analysis
+  
+  \medskip
+
+  \experience{Software Engineer}{Pan-STARRS Telescopes}{March
+    2013 - May 2022 (9 years)}{Honolulu, Hawai`i, USA}
+
+  \medskip
   
   {\large Software Lead of the Moving Objects Processing System}
-
-  \bigskip
   
   $\bullet$ Transformed the software stack running in HTCondor to a
   service-based one based on Kubernetes and docker resulting in a
   significant speed-up for the data processing
-
-  \medskip
   
   $\bullet$ Automated all dataflows removing all manual
   operations
-
-  \medskip
 
   $\bullet$ Expanded and reimplemented data processing, data analysis,
   and data visualization functions using state-of-the-art tools and
   methods
 
-  \medskip
-
   $\bullet$ Redefined and built the hardware stack to create a
   medium-size HPC infrastructure
-  
-  \medskip
 
   $\bullet$ Successfully proposed the adoption of modern tools for
   configuration management, testing, documentation, and tracing
 
-  \medskip
-
   $\bullet$ Outreach support for researchers, students, and Pan-STARRS
   dedicated public program
 
-  \medskip
-
-  $\bullet$ (Since May 2020) Liaison and Technical Expert with the Small Bodies
-  Node / NASA
-
-  \bigskip
+  $\bullet$ (May 2020-April 2022) Liaison and Technical Expert with
+  the Small Bodies Node / NASA
   
   \experience{Software Engineer}{Pan-STARRS1 Science Consortium}{June
     2010 - February 2013 (3 years)}{Honolulu, Hawai`i, USA}
 
-  \bigskip
+  \medskip
 
   {\large System Administrator and Front-End Developer}
   
-  \medskip
-
   $\bullet$ Middleware administration and optimization
-
-  \medskip
   
   $\bullet$ Developed an interface for cluster and workflow monitoring
 \end{minipage}
@@ -405,7 +405,28 @@
   \medskip
 
   {\large Developed a tool for retinal images analysis}
+
+  \bigskip
   
+  \mynewsection{\faCubes}{Self-Study}
+  
+  \medskip
+
+  \experience{ Machine Learning}{%
+    }{%
+    Aug-Nov 2022}{%
+    }
+  
+  \medskip
+
+  $\bullet$ pytorch, tensorflow, scikit-learn; colab, kaggle
+
+  $\bullet$ NLP/Transformers for customer receipt tracking (project
+  with Pr. M. Belcaid at Univ. Hawai`i at M\-{a}noa)
+  
+  $\bullet$ Surrogates for distributed workflows modeling: prediction
+  and inverse model (project with Pr. H. Casanova at Univ. Hawai`i
+  at M\-{a}noa)
 \end{minipage}
 
 \end{document}
